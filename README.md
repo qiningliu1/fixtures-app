@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fixtures Management System
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
+- MongoDB Atlas account
+- Git
 
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/qiningliu1/fixtures-app.git
+cd fixtures-app
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Setup
+1. Create `.env.local` file:
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/fixtures?retryWrites=true&w=majority
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+2. Get your MongoDB connection string from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Running the App
+```bash
+# Development mode
+npm run dev
 
-## Learn More
+# Production build
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Project Structure
+```
+src/
+├── app/
+│   ├── api/            # API routes
+│   ├── page.js         # Home page
+│   └── upload/
+│       └── page.js     # Upload page
+├── components/         # React components
+└── models/             # MongoDB models
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Dependencies
+- Frontend:
+  - next 15.3.2
+  - react 18.2.0
+  - axios 1.6.8
+  - papaparse 5.4.1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Backend:
+  - mongodb 6.5.0
+  - mongoose 8.2.1
 
-## Deploy on Vercel
+##  Deployment
+Deployed on Vercel: [Live Demo](https://your-vercel-url.vercel.app)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fqiningliu1%2Ffixtures-app)
